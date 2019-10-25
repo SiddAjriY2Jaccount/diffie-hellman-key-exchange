@@ -1,14 +1,20 @@
 import random
+from math import sqrt
 # Using g=5, p=23 -> public domain
 g = 5
 p = 23
 
 def isPrime(j):
     c = 0
-    for i in range(2,j+1):
+    if j == 2: 
+       return True
+    
+    for i in range(2,math.sqrt(j)):
         if j%i == 0:
             c+=1
-    if c==1:
+        if c > 1:
+            break
+    if c<=1:
         return True
     else:
         return False
